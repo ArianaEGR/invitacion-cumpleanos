@@ -35,7 +35,7 @@ body {
     animation: fadeInUp 1s ease-in-out;
 }
 
-.location-button {
+.location-button, .confirm-button {
     background-color: #ff99c8;
     color: #ffffff;
     border: none;
@@ -45,10 +45,30 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     animation: fadeInUp 1s ease-in-out;
+    margin-top: 10px;
 }
 
-.location-button:hover {
+.confirm-button {
+    display: block;
+    width: 100%;
+}
+
+.location-button:hover, .confirm-button:hover {
     background-color: #f573a1;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.confirmation-form {
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 @keyframes fadeIn {
