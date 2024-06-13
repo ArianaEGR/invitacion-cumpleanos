@@ -18,7 +18,7 @@
         <p class="description">Ven a celebrar mi cumpleaños el <strong>15 de julio</strong> a las <strong>6:00 PM</strong>.</p>
         <p class="description">La fiesta será en <strong>123 Calle Fiesta, Ciudad Cumpleaños</strong>.</p>
         <button class="location-button" onclick="redirectToLocation()">Ver Ubicación</button>
-        <form id="confirmation-form">
+        <form id="confirmation-form" class="confirmation-form">
             <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
             <button type="submit" class="confirm-button">Confirmar Asistencia</button>
         </form>
@@ -26,8 +26,8 @@
 
     <script>
         function redirectToLocation() {
-            const address = "Senda de paso 6075";
-`https://www.google.com/maps/search/?api=1&query=${<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d650.0869523939303!2d-56.37351324906046!3d-34.85922935193835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2suy!4v1718291574393!5m2!1ses-419!2suy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>(address)}`;
+            const address = "123 Calle Fiesta, Ciudad Cumpleaños";
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
             window.location.href = googleMapsUrl;
         }
 
