@@ -16,7 +16,7 @@
     <div class="invitation-container">
         <h1 class="title">¡Estás Invitado!</h1>
         <p class="description">Vamos a hacer relajo el <strong>10 y 11 de agosto</strong> desde las <strong>6:00 PM</strong>.</p>
-        <p class="description"> Vamos a estar en <strong>Servidumbre de paso 6075 y Carlin Bertolotti, Montevideo</strong>.</p>
+        <p class="description"> Vamos a estar en <strong>Servidumbre de paso 6075, Montevideo</strong>.</p>
         <button class="location-button" onclick="redirectToLocation()">Ver Ubicación</button>
         <form id="confirmation-form" class="confirmation-form">
             <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
@@ -26,7 +26,7 @@
 
     <script>
         function redirectToLocation() {
-            const address = "Servidumbre de paso 6075 y Carlin Bertolotti, Montevideo";
+            const address = "Servidumbre de paso 6075, Montevideo";
             const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
             window.location.href = googleMapsUrl;
         }
