@@ -101,7 +101,7 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
     width: 100%;
-    top: 70px; /* Ajuste para mover el pop-up más hacia abajo */
+    top: 80px; /* Ajuste para mover el pop-up más hacia abajo */
     left: 0;
     transform: translateY(-50%);
 }
