@@ -13,6 +13,9 @@
     </script>
 </head>
 <body>
+    <div class="popup" id="popup">
+        <span class="popup-text">Mi Cumpleaños</span>
+    </div>
     <div class="invitation-container">
         <h1 class="title">¡Estás Invitado!</h1>
         <p class="description">Vamos a hacer relajo el <strong>10 y 11 de agosto</strong> desde las <strong>6:00 PM</strong>.</p>
@@ -22,10 +25,6 @@
             <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
             <button type="submit" class="confirm-button">Confirmar Asistencia</button>
         </form>
-    </div>
-
-    <div id="popup" class="popup">
-        <span class="popup-text">Mi Cumpleaños</span>
     </div>
 
     <script>
@@ -54,10 +53,11 @@
 
         window.onload = function() {
             const popup = document.getElementById('popup');
-            popup.style.display = 'block';
+            popup.classList.add('show-fullscreen');
             setTimeout(() => {
-                popup.style.display = 'none';
-            }, 3000);
+                popup.classList.remove('show-fullscreen');
+                popup.classList.add('fixed-top');
+            }, 2000);
         }
     </script>
 </body>
