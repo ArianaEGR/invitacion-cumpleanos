@@ -24,6 +24,10 @@
         </form>
     </div>
 
+    <div id="popup" class="popup">
+        <span class="popup-text">Mi Cumpleaños</span>
+    </div>
+
     <script>
         function redirectToLocation() {
             const address = "Servidumbre de paso 6075, Montevideo";
@@ -47,6 +51,14 @@
                 alert('Error al enviar la confirmación. Por favor, inténtalo de nuevo.');
             });
         });
+
+        window.onload = function() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
