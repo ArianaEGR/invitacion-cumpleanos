@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación de Cumpleaños</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("zxmkDGcQQXcqesn-n"); // Reemplaza con tu userID de EmailJS
+        })();
+    </script>
 </head>
 <body>
     <div class="invitation-container">
@@ -12,14 +18,35 @@
         <p class="description">Ven a celebrar mi cumpleaños el <strong>15 de julio</strong> a las <strong>6:00 PM</strong>.</p>
         <p class="description">La fiesta será en <strong>123 Calle Fiesta, Ciudad Cumpleaños</strong>.</p>
         <button class="location-button" onclick="redirectToLocation()">Ver Ubicación</button>
+        <form id="confirmation-form">
+            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+            <button type="submit" class="confirm-button">Confirmar Asistencia</button>
+        </form>
     </div>
 
     <script>
         function redirectToLocation() {
             const address = "123 Calle Fiesta, Ciudad Cumpleaños";
-            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${https://maps.app.goo.gl/7cAjkFQTDnr77GQ96}`;
             window.location.href = googleMapsUrl;
         }
+
+        document.getElementById('confirmation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+
+            emailjs.send("service_391i0l9", "template_auu3lzd", {
+                to_name: "Ariana",
+                from_name: name,
+                message: `Hola Ariana, ${name} ha confirmado su asistencia.`
+            })
+            .then(function(response) {
+                alert('Confirmación enviada con éxito. Gracias por confirmar tu asistencia.');
+            }, function(error) {
+                alert('Error al enviar la confirmación. Por favor, inténtalo de nuevo.');
+            });
+        });
     </script>
 </body>
 </html>
